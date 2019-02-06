@@ -20,6 +20,8 @@ func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Con
 func main() {
   e := echo.New()
 
+  e.Static("/","assets")
+
   e.Use(middleware.Logger())
   e.Use(middleware.Recover())
 
